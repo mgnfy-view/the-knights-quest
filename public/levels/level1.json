@@ -1,0 +1,223 @@
+{
+    "compressionlevel": -1,
+    "height": 16,
+    "infinite": false,
+    "layers": [
+        {
+            "draworder": "topdown",
+            "id": 3,
+            "name": "platform",
+            "objects": [
+                {
+                    "height": 16,
+                    "id": 1,
+                    "name": "platform",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 32,
+                    "y": 144
+                },
+                {
+                    "height": 64,
+                    "id": 2,
+                    "name": "platform",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 48,
+                    "x": 80,
+                    "y": 144
+                },
+                {
+                    "height": 80,
+                    "id": 3,
+                    "name": "platform",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 128,
+                    "y": 128
+                },
+                {
+                    "height": 64,
+                    "id": 4,
+                    "name": "platform",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 80,
+                    "x": 144,
+                    "y": 128
+                }
+            ],
+            "opacity": 1,
+            "type": "objectgroup",
+            "visible": true,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "draworder": "topdown",
+            "id": 4,
+            "name": "game-objects",
+            "objects": [
+                {
+                    "height": 16,
+                    "id": 6,
+                    "name": "tile",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 144,
+                    "y": 80
+                },
+                {
+                    "height": 16,
+                    "id": 7,
+                    "name": "tile",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 144,
+                    "y": 96
+                },
+                {
+                    "height": 16,
+                    "id": 7,
+                    "name": "tile",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 144,
+                    "y": 112
+                },
+                {
+                    "height": 16,
+                    "id": 9,
+                    "name": "tile",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 128,
+                    "y": 96
+                },
+                {
+                    "height": 16,
+                    "id": 10,
+                    "name": "tile",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 128,
+                    "y": 112
+                },
+                {
+                    "height": 16,
+                    "id": 11,
+                    "name": "tile",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 112,
+                    "y": 112
+                },
+                {
+                    "height": 16,
+                    "id": 12,
+                    "name": "tile",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 112,
+                    "y": 128
+                },
+                {
+                    "height": 16,
+                    "id": 13,
+                    "name": "coin",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 176,
+                    "y": 80
+                },
+                {
+                    "height": 16,
+                    "id": 14,
+                    "name": "exit",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 208,
+                    "y": 112
+                }
+            ],
+            "opacity": 1,
+            "type": "objectgroup",
+            "visible": true,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "draworder": "topdown",
+            "id": 5,
+            "name": "spawns",
+            "objects": [
+                {
+                    "height": 0,
+                    "id": 15,
+                    "name": "player-spawn",
+                    "point": true,
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 0,
+                    "x": 32,
+                    "y": 128
+                }
+            ],
+            "opacity": 1,
+            "type": "objectgroup",
+            "visible": true,
+            "x": 0,
+            "y": 0
+        }
+    ],
+    "nextlayerid": 6,
+    "nextobjectid": 16,
+    "orientation": "orthogonal",
+    "renderorder": "right-down",
+    "tiledversion": "1.10.2",
+    "tileheight": 16,
+    "tilesets": [
+        {
+            "columns": 8,
+            "firstgid": 1,
+            "image": "../spriteSheets/spriteSheet.png",
+            "imageheight": 128,
+            "imagewidth": 128,
+            "margin": 0,
+            "name": "spriteSheet",
+            "spacing": 0,
+            "tilecount": 64,
+            "tileheight": 16,
+            "tilewidth": 16
+        }
+    ],
+    "tilewidth": 16,
+    "type": "map",
+    "version": "1.10",
+    "width": 16
+}
