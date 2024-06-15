@@ -15,7 +15,7 @@
         "preview": "vite preview",
         "format": "prettier . --write",
         "lint": "eslint .",
-        "precommit": "pnpm run format && git add . && pnpm run lint"
+        "precommit": "pnpm run format && pnpm run lint && git add ."
     },
     "devDependencies": {
         "@eslint/js": "^9.4.0",

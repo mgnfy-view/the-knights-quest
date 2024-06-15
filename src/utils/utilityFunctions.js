@@ -1,5 +1,5 @@
 import { k } from "./kaboomContext";
-import { SCALE, LAYERS, OBJECTS } from "./constants";
+import { SCALE, LAYERS, OBJECTS, TAGS, ANIMATIONS, FONTS, UI_SIZE } from "./constants";
 
 async function makeMap(levelName) {
     // Fetch the json data from the public folder
@@ -13,6 +13,9 @@ async function makeMap(levelName) {
     const tileSpawns = [];
     const coinSpawns = [];
     const exitSpawn = [];
+    const scaffoldSpawns = [];
+    const waterTopSpawns = [];
+    const waterBottomSpawns = [];
 
     // Fetch info from the json level
     for (const layer of mapData.layers) {
@@ -26,6 +29,7 @@ async function makeMap(levelName) {
                     k.area(),
                     k.body({ isStatic: true }),
                     k.opacity(0),
+                    TAGS.platform,
                 ]);
             }
         }
@@ -43,6 +47,15 @@ async function makeMap(levelName) {
                     case OBJECTS.exit:
                         exitSpawn.push([gameObject.x, gameObject.y]);
                         break;
+                    case OBJECTS.scaffold:
+                        scaffoldSpawns.push([gameObject.x, gameObject.y]);
+                        break;
+                    case OBJECTS.waterTop:
+                        waterTopSpawns.push([gameObject.x, gameObject.y]);
+                        break;
+                    case OBJECTS.waterBottom:
+                        waterBottomSpawns.push([gameObject.x, gameObject.y]);
+                        break;
                 }
             }
         }
@@ -55,7 +68,52 @@ async function makeMap(levelName) {
         }
     }
 
-    return { map, playerSpawn, tileSpawns, coinSpawns, exitSpawn };
+    return {
+        map,
+        playerSpawn,
+        tileSpawns,
+        coinSpawns,
+        exitSpawn,
+        scaffoldSpawns,
+        waterTopSpawns,
+        waterBottomSpawns,
+    };
 }
 
-export { makeMap };
+function scaleUp(number) {
+    return number * SCALE;
+}
+
+function addScoreSection(globalState) {
+    // We'll use magic values for the scoreboard, since this is a one time thing. So pardon me!
+
+    k.add([
+        k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.fireBall }),
+        k.pos(20, 20),
+        k.scale(SCALE - 1),
+    ]);
+    const fireBallCount = k.add([
+        k.text(`${globalState.fireBalls}`, {
+            font: FONTS.kitchenSink,
+        }),
+        k.pos(60, 26),
+        k.scale(UI_SIZE.textScale),
+    ]);
+
+    k.add([
+        k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.coin }),
+        k.pos(140, 20),
+        k.scale(SCALE - 1),
+    ]);
+    const coinCount = k.add([
+        k.text(`${globalState.coinsCollected}`, {
+            font: FONTS.kitchenSink,
+        }),
+        k.pos(180, 26),
+        k.scale(UI_SIZE.textScale),
+    ]);
+
+    return { fireBallCount, coinCount };
+}
+
+export { makeMap, scaleUp, addScoreSection };

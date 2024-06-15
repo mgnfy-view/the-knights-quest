@@ -1,5 +1,6 @@
 import { k } from "../utils/kaboomContext";
-import { makeMap } from "../utils/utilityFunctions";
+import { end } from "./end";
+import { addScoreSection, makeMap, scaleUp } from "../utils/utilityFunctions";
 import { levels } from "../utils/levelInfo";
 import {
     SCALE,
@@ -9,14 +10,15 @@ import {
     PLAYER_SPEED,
     ANIMATIONS,
     KEYS,
-    CANVAS_HEIGHT,
     SOUNDS,
     VOLUME,
+    LEVEL_START_TAG,
+    END,
 } from "../utils/constants";
 
 // The level scene is used to create new levels
 // The global state should contain a level number (starting from 0), the number of bullets
-// and scaffolds available in this level, and the number of coins collected so far
+// available in this level, and the number of coins collected so far
 async function levelScene(globalState) {
     // Load the map for the level
     k.loadSprite(levels[globalState.level].name, `./maps/${levels[globalState.level].name}.png`);
@@ -28,6 +30,9 @@ async function levelScene(globalState) {
         tileSpawns,
         coinSpawns,
         exitSpawn,
+        scaffoldSpawns,
+        waterTopSpawns,
+        waterBottomSpawns,
     } = await makeMap(levels[globalState.level].name);
 
     // Add the map to the level
@@ -36,8 +41,12 @@ async function levelScene(globalState) {
     // Add the player to the level
     const player = k.add([
         k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.idleRight }),
-        k.pos(playerSpawn[0][0] * SCALE, playerSpawn[0][1] * SCALE),
-        k.area(),
+        k.pos(scaleUp(playerSpawn[0][0]), scaleUp(playerSpawn[0][1])),
+        k.area({
+            // I used magic numbers here, I know it's a bad practice
+            // But since it's used nowhere else, I think we can get away with that
+            shape: new k.Rect(k.vec2(3, 1), 12, 15),
+        }),
         k.body(),
         k.scale(SCALE),
         TAGS.player, // Add the "player" tag
@@ -47,7 +56,7 @@ async function levelScene(globalState) {
     for (const tileSpawn of tileSpawns) {
         k.add([
             k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.tile }),
-            k.pos(tileSpawn[0] * SCALE, tileSpawn[1] * SCALE),
+            k.pos(scaleUp(tileSpawn[0]), scaleUp(tileSpawn[1])),
             k.area(),
             k.body(),
             k.scale(SCALE),
@@ -60,9 +69,11 @@ async function levelScene(globalState) {
     for (const coinSpawn of coinSpawns) {
         k.add([
             k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.coin }),
-            k.pos(coinSpawn[0] * SCALE, coinSpawn[1] * SCALE),
+            k.pos(scaleUp(coinSpawn[0]), scaleUp(coinSpawn[1])),
             k.area({
-                shape: new k.Rect(k.vec2(1 * SCALE, 1 * SCALE), 3 * SCALE, 4 * SCALE),
+                // Magic numbers once again, haha
+                // We'll use magic numbers with k.Rect() only
+                shape: new k.Rect(k.vec2(3, 3), 9, 12),
             }),
             k.scale(SCALE),
             TAGS.coin, // Add the "coin" tag
@@ -72,12 +83,51 @@ async function levelScene(globalState) {
     // Add the exit to the level
     k.add([
         k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.exit }),
-        k.pos(exitSpawn[0][0] * SCALE, exitSpawn[0][1] * SCALE),
+        k.pos(scaleUp(exitSpawn[0][0]), scaleUp(exitSpawn[0][1])),
         k.area(),
         k.body({ isStatic: true }),
         k.scale(SCALE),
         TAGS.exit, // Add the "exit" tag
     ]);
+
+    // Add the scaffolds to the level
+    for (const scaffoldSpawn of scaffoldSpawns) {
+        k.add([
+            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.scaffold }),
+            k.pos(scaleUp(scaffoldSpawn[0]), scaleUp(scaffoldSpawn[1])),
+            k.area(),
+            k.body({ isStatic: true }),
+            k.scale(SCALE),
+            TAGS.scaffold, // Add the "scaffold" tag
+        ]);
+    }
+
+    // Add the water tops to the level
+    for (const waterTopSpawn of waterTopSpawns) {
+        k.add([
+            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.waterTop }),
+            k.pos(scaleUp(waterTopSpawn[0]), scaleUp(waterTopSpawn[1])),
+            k.area(),
+            k.scale(SCALE),
+            k.opacity(0.7),
+            TAGS.waterTop, // Add the "water-top" tag
+        ]);
+    }
+
+    // Add the water bottoms to the level
+    for (const waterBottomSpawn of waterBottomSpawns) {
+        k.add([
+            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.waterBottom }),
+            k.pos(scaleUp(waterBottomSpawn[0]), scaleUp(waterBottomSpawn[1])),
+            k.area(),
+            k.scale(SCALE),
+            k.opacity(0.7),
+            TAGS.waterBottom, // Add the "water-bottom" tag
+        ]);
+    }
+
+    // Display the number of fire balls left, and the coins collected so far
+    const { fireBallCount, coinCount } = addScoreSection(globalState);
 
     // Register controls
 
@@ -87,6 +137,7 @@ async function levelScene(globalState) {
             case KEYS.right:
                 player.move(PLAYER_SPEED, 0);
                 break;
+
             case KEYS.left:
                 player.move(-PLAYER_SPEED, 0);
                 break;
@@ -103,9 +154,11 @@ async function levelScene(globalState) {
             case KEYS.right:
                 player.play(ANIMATIONS.walkRight);
                 break;
+
             case KEYS.left:
                 player.play(ANIMATIONS.walkLeft);
                 break;
+
             case KEYS.space:
                 if (player.isGrounded()) {
                     k.play(SOUNDS.jump, {
@@ -114,23 +167,22 @@ async function levelScene(globalState) {
                     player.jump(JUMP_FORCE);
                 }
                 break;
+
             case KEYS.x:
                 if (globalState.fireBalls) {
                     k.play(SOUNDS.fireBall, {
                         volume: VOLUME.fireBall,
                     });
-                    const direction = ["idleRight", "walkRight"].includes(player.curAnim())
-                        ? 1
-                        : -1;
+
+                    const rightFacingAnimation = [ANIMATIONS.idleRight, ANIMATIONS.walkRight];
+                    const direction = rightFacingAnimation.includes(player.curAnim()) ? 1 : -1;
+
                     if (direction === -1) {
                         const fireBall = k.add([
-                            k.sprite(TAGS.spriteSheet, { anim: "fireBall" }),
+                            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.fireBall }),
                             k.area({
-                                shape: new k.Rect(
-                                    k.vec2(-2 * SCALE, 2 * SCALE),
-                                    3 * SCALE,
-                                    1 * SCALE,
-                                ),
+                                // Noooo! Magic values once again!
+                                shape: new k.Rect(k.vec2(-6, 6), 9, 3),
                             }),
                             k.pos(player.pos.x + 32, player.pos.y + 8),
                             k.anchor("topright"),
@@ -139,18 +191,15 @@ async function levelScene(globalState) {
                             {
                                 direction,
                             },
-                            OBJECTS.fireBall,
+                            TAGS.fireBall, // Add the "fireBall" tag
                         ]);
                         fireBall.flipX = true;
                     } else
                         k.add([
-                            k.sprite(TAGS.spriteSheet, { anim: "fireBall" }),
+                            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.fireBall }),
                             k.area({
-                                shape: new k.Rect(
-                                    k.vec2(2 * SCALE, 2 * SCALE),
-                                    3 * SCALE,
-                                    1 * SCALE,
-                                ),
+                                // AAaaah!!!
+                                shape: new k.Rect(k.vec2(6, 6), 9, 3),
                             }),
                             k.pos(player.pos.x + 32, player.pos.y + 8),
                             k.scale(SCALE),
@@ -158,9 +207,11 @@ async function levelScene(globalState) {
                             {
                                 direction,
                             },
-                            OBJECTS.fireBall,
+                            TAGS.fireBall, // Add the "fireBall" tag
                         ]);
+
                     --globalState.fireBalls;
+                    fireBallCount.text = `${globalState.fireBalls}`;
                 }
                 break;
         }
@@ -172,6 +223,7 @@ async function levelScene(globalState) {
             case KEYS.right:
                 player.play(ANIMATIONS.idleRight);
                 break;
+
             case KEYS.left:
                 player.play(ANIMATIONS.idleLeft);
                 break;
@@ -180,20 +232,66 @@ async function levelScene(globalState) {
 
     // Collision detection
 
-    // To allow tiles to fall in gravity after being touched by the player,
-    // we'll turn them to non-static bodies after collision
-    player.onCollideEnd(OBJECTS.tile, (tile) => {
-        tile.isStatic = false;
-    });
-
     // Grab a coin
     player.onCollide(OBJECTS.coin, (coin) => {
         k.play(SOUNDS.coinCollect, {
             volume: VOLUME.coinCollect,
         });
         k.destroy(coin);
+
         ++globalState.coinsCollected;
         ++coinsCollectedThisLevel;
+        coinCount.text = `${globalState.coinsCollected}`;
+    });
+
+    // To allow tiles to fall in gravity after being touched by the player,
+    // we'll turn them to non-static bodies after collision
+    player.onCollideEnd(OBJECTS.tile, (tile) => {
+        tile.isStatic = false;
+    });
+
+    // Move to the next level using the exit
+    player.onCollide(TAGS.exit, () => {
+        ++globalState.level;
+
+        if (globalState.level >= levels.length) {
+            k.scene(END, end);
+            k.go(END, globalState);
+        } else {
+            // k.scene(LEVEL_START_TAG, levelStart);
+            k.go(LEVEL_START_TAG, {
+                level: globalState.level,
+                coinsCollected: globalState.coinsCollected,
+                fireBalls: levels[globalState.level].fireBalls,
+            });
+        }
+    });
+
+    // Jump continuously while in the water elevator
+    // This gives a nice wobbly effect while going up
+
+    player.onCollide(TAGS.waterTop, () => {
+        player.jump(JUMP_FORCE);
+    });
+
+    player.onCollide(TAGS.waterBottom, () => {
+        player.jump(JUMP_FORCE);
+    });
+
+    // If the player goes offscreen, restart the level
+    player.onUpdate(() => {
+        if (player.pos.y > k.height() + 100) {
+            globalState.fireBalls = levels[globalState.level].fireBalls;
+            globalState.coinsCollected -= coinsCollectedThisLevel;
+
+            k.go(levels[globalState.level].name, globalState);
+        }
+    });
+
+    // Make tiles static before collision
+    // This is to avoid displacing the tiles
+    player.onBeforePhysicsResolve(({ target }) => {
+        if (target.is(TAGS.tile)) target.isStatic = true;
     });
 
     // Destroy a tile if the fire ball collides with it
@@ -205,35 +303,18 @@ async function levelScene(globalState) {
         k.destroy(tile);
     });
 
-    // Move to the next level using the exit
-    player.onCollide(TAGS.exit, () => {
-        if (globalState.level + 1 >= levels.length) k.go("end");
-        else {
-            ++globalState.level;
-            k.scene(levels[globalState.level].name, levelScene);
-            k.go(levels[globalState.level].name, {
-                level: globalState.level,
-                coinsCollected: globalState.coinsCollected,
-                fireBalls: levels[globalState.level].fireBalls,
-            });
-        }
+    // Destroy a scaffold if it is hit by a fire ball
+    k.onCollide(OBJECTS.fireBall, OBJECTS.scaffold, (fireBall, scaffold) => {
+        k.play(SOUNDS.tileDestroy, {
+            volume: VOLUME.tileDestroy,
+        });
+        k.destroy(fireBall);
+        k.destroy(scaffold);
     });
 
     // Once a fire ball is spawned, keep moving it until it goes offscreen
     k.onUpdate(OBJECTS.fireBall, (fireBall) => {
         fireBall.move(PLAYER_SPEED * fireBall.direction, 0);
-    });
-
-    player.onUpdate(() => {
-        if (player.pos.y > CANVAS_HEIGHT * SCALE) {
-            globalState.fireBalls = levels[globalState.level].fireBalls;
-            globalState.coinsCollected -= coinsCollectedThisLevel;
-            k.go(levels[globalState.level].name, globalState);
-        }
-    });
-
-    player.onBeforePhysicsResolve(({ source, target }) => {
-        if (source.is(TAGS.player) && target.is(TAGS.tile)) target.isStatic = true;
     });
 }
 
