@@ -9,7 +9,7 @@ function levelStart(globalState) {
         k.text(`LEVEL ${globalState.level + 1}`, {
             font: FONTS.kitchenSink,
         }),
-        k.pos(k.width() / 2, k.height() / 2 - 50),
+        k.pos(k.width() / 2, k.height() / 2 - 10),
         k.anchor("center"),
     ]);
 

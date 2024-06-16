@@ -41,6 +41,7 @@ const FONTS = {
     kitchenSinkInverted: "kitchenSinkInverted",
 };
 
+// Scales for the UI text
 const UI_SIZE = {
     textScale: 0.6,
 };
@@ -52,7 +53,8 @@ const KEYS = {
     space: "space",
     x: "x",
     enter: "enter",
-    r: "r",
+    h: "h",
+    esc: "escape",
 };
 
 // Tags for sound effects
@@ -107,6 +109,7 @@ const TAGS = {
 const MENU = "menu";
 const LEVEL_START_TAG = "levelStart";
 const END = "end";
+const HELP = "help";
 
 export {
     SCALE,
@@ -129,4 +132,5 @@ export {
     MENU,
     LEVEL_START_TAG,
     END,
+    HELP,
 };

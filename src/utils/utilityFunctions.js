@@ -109,7 +109,7 @@ function addScoreSection(globalState) {
         k.text(`${globalState.coinsCollected}`, {
             font: FONTS.kitchenSink,
         }),
-        k.pos(180, 26),
+        k.pos(175, 26),
         k.scale(UI_SIZE.textScale),
     ]);
 
