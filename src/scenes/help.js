@@ -2,15 +2,15 @@ import { k } from "../utils/kaboomContext";
 import { FONTS, KEYS, MENU, UI_SIZE } from "../utils/constants";
 
 function help() {
-    const goBack = "<- Press 'esc' to go back";
+    const goBackText = "<- Press 'esc' to go back";
     k.add([
-        k.text(goBack, {
+        k.text(goBackText, {
             font: FONTS.kitchenSink,
             align: "left",
         }),
         k.pos(30, 40),
         k.anchor("left"),
-        k.scale(UI_SIZE.textScale - 0.2),
+        k.scale(UI_SIZE.textScale - 0.2), // Make it even smaller
     ]);
 
     const helpText = [
@@ -46,7 +46,7 @@ function help() {
         k.scale(UI_SIZE.textScale),
     ]);
 
-    // Go back to the main menu
+    // Go back to the main menu when the escape key is pressed
     k.onKeyPress(KEYS.esc, () => {
         k.go(MENU);
     });

@@ -1,6 +1,17 @@
 import { k } from "./kaboomContext";
-import { SCALE, LAYERS, OBJECTS, TAGS, ANIMATIONS, FONTS, UI_SIZE } from "./constants";
+import {
+    SCALE,
+    LAYERS,
+    OBJECTS,
+    TAGS,
+    ANIMATIONS,
+    FONTS,
+    UI_SIZE,
+    WATER_OPACITY,
+} from "./constants";
 
+// Creates the map for a level and returns the map along with the spawn points for various
+// game objects
 async function makeMap(levelName) {
     // Fetch the json data from the public folder
     const mapData = await (await fetch(`./levels/${levelName}.json`)).json();
@@ -80,10 +91,12 @@ async function makeMap(levelName) {
     };
 }
 
+// Scales the number passed in by the game's scaling factor
 function scaleUp(number) {
     return number * SCALE;
 }
 
+// Adds the score section (which displays the fire ball and coin count) to the level
 function addScoreSection(globalState) {
     // We'll use magic values for the scoreboard, since this is a one time thing. So pardon me!
 
@@ -116,4 +129,105 @@ function addScoreSection(globalState) {
     return { fireBallCount, coinCount };
 }
 
-export { makeMap, scaleUp, addScoreSection };
+// Adds all the game objects (player, exit, coins, tiles, scaffolds, water elevators) to
+// the leve;
+function addGameObjects({
+    playerSpawn,
+    tileSpawns,
+    coinSpawns,
+    exitSpawn,
+    scaffoldSpawns,
+    waterTopSpawns,
+    waterBottomSpawns,
+}) {
+    // Add the player to the level
+    const player = k.add([
+        k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.idleRight }),
+        k.pos(scaleUp(playerSpawn[0][0]), scaleUp(playerSpawn[0][1])),
+        k.area({
+            // I used magic numbers here, I know it's a bad practice
+            // But since it's used nowhere else, I think we can get away with that
+            shape: new k.Rect(k.vec2(3, 1), 12, 15),
+        }),
+        k.body(),
+        k.scale(SCALE),
+        TAGS.player, // Add the "player" tag
+    ]);
+
+    // Add the tiles to the level
+    for (const tileSpawn of tileSpawns) {
+        k.add([
+            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.tile }),
+            k.pos(scaleUp(tileSpawn[0]), scaleUp(tileSpawn[1])),
+            k.area(),
+            k.body(),
+            k.scale(SCALE),
+            TAGS.tile, // Add the "tile" tag
+        ]);
+    }
+
+    // Now, add the coins to the level
+    for (const coinSpawn of coinSpawns) {
+        k.add([
+            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.coin }),
+            k.pos(scaleUp(coinSpawn[0]), scaleUp(coinSpawn[1])),
+            k.area({
+                // Magic numbers once again, haha
+                // We'll use magic numbers with k.Rect() only
+                shape: new k.Rect(k.vec2(3, 3), 9, 12),
+            }),
+            k.scale(SCALE),
+            TAGS.coin, // Add the "coin" tag
+        ]);
+    }
+
+    // Add the exit to the level
+    k.add([
+        k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.exit }),
+        k.pos(scaleUp(exitSpawn[0][0]), scaleUp(exitSpawn[0][1])),
+        k.area(),
+        k.body({ isStatic: true }),
+        k.scale(SCALE),
+        TAGS.exit, // Add the "exit" tag
+    ]);
+
+    // Add the scaffolds to the level
+    for (const scaffoldSpawn of scaffoldSpawns) {
+        k.add([
+            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.scaffold }),
+            k.pos(scaleUp(scaffoldSpawn[0]), scaleUp(scaffoldSpawn[1])),
+            k.area(),
+            k.body({ isStatic: true }),
+            k.scale(SCALE),
+            TAGS.scaffold, // Add the "scaffold" tag
+        ]);
+    }
+
+    // Add the water tops to the level
+    for (const waterTopSpawn of waterTopSpawns) {
+        k.add([
+            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.waterTop }),
+            k.pos(scaleUp(waterTopSpawn[0]), scaleUp(waterTopSpawn[1])),
+            k.area(),
+            k.scale(SCALE),
+            k.opacity(WATER_OPACITY),
+            TAGS.waterTop, // Add the "water-top" tag
+        ]);
+    }
+
+    // Add the water bottoms to the level
+    for (const waterBottomSpawn of waterBottomSpawns) {
+        k.add([
+            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.waterBottom }),
+            k.pos(scaleUp(waterBottomSpawn[0]), scaleUp(waterBottomSpawn[1])),
+            k.area(),
+            k.scale(SCALE),
+            k.opacity(WATER_OPACITY),
+            TAGS.waterBottom, // Add the "water-bottom" tag
+        ]);
+    }
+
+    return { player };
+}
+
+export { makeMap, scaleUp, addScoreSection, addGameObjects };

@@ -13,7 +13,7 @@ function levelStart(globalState) {
         k.anchor("center"),
     ]);
 
-    // Go to the level after briefly displaying the start screen
+    // Go to the level after briefly displaying the level number
     setTimeout(() => {
         k.scene(levels[globalState.level].name, levelScene);
         k.go(levels[globalState.level].name, globalState);

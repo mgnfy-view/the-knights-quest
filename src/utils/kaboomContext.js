@@ -9,7 +9,7 @@ const k = kaboom({
     height: CANVAS_HEIGHT * SCALE,
     canvas: gameCanvas,
     background: CANVAS_COLOR,
-    global: false,
+    global: false, // This makes it such that you need to prefix all kaboom.js functions with `k.`
 });
 
 export { k };

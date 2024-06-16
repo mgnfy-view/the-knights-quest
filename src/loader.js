@@ -1,6 +1,7 @@
 import { k } from "./utils/kaboomContext";
 import { TAGS, SOUNDS, FONTS } from "./utils/constants";
 
+// Loads all the assets required by the game
 function loadAssets() {
     // Load the spritesheet for the game
     k.loadSprite(TAGS.spriteSheet, "./spriteSheets/spriteSheet.png", {

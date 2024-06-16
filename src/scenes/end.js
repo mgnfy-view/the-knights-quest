@@ -8,15 +8,16 @@ function end(globalState) {
     // Add the background image
     k.add([k.sprite(END), k.pos(0), k.scale(SCALE)]);
 
-    const end = "THE END";
+    const closingText = "THE END";
     k.add([
-        k.text(end, {
+        k.text(closingText, {
             font: FONTS.kitchenSink,
         }),
         k.pos(k.width() / 2, k.height() / 2 - 150),
         k.anchor("center"),
     ]);
 
+    // The coins matter! The knight is greedy!
     const coinsCollectedText = `The knight grabbed ${globalState.coinsCollected} coins`;
     k.add([
         k.text(coinsCollectedText, {

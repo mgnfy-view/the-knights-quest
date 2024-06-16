@@ -32,9 +32,9 @@ function menu() {
     ]);
 
     // Press enter to start
-    const action = "Press Enter to Start";
+    const actionText = "Press Enter to Start";
     k.add([
-        k.text(action, {
+        k.text(actionText, {
             font: FONTS.kitchenSinkInverted,
         }),
         k.pos(k.width() / 2, k.height() / 2 - 80),
@@ -42,9 +42,9 @@ function menu() {
         k.scale(UI_SIZE.textScale),
     ]);
 
-    const helpAction = "Press 'h'\nto open guide";
+    const helpActionText = "Press 'h'\nto open guide";
     k.add([
-        k.text(helpAction, {
+        k.text(helpActionText, {
             font: FONTS.kitchenSink,
             align: "left",
         }),
@@ -53,9 +53,9 @@ function menu() {
         k.scale(UI_SIZE.textScale - 0.2),
     ]);
 
-    const credits = "Made with love\nby mgnfy-view";
+    const creditsText = "Made with love\nby mgnfy-view";
     k.add([
-        k.text(credits, {
+        k.text(creditsText, {
             font: FONTS.kitchenSink,
             align: "right",
         }),

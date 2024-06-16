@@ -23,7 +23,7 @@
   <h3 align="center">The Knight's Quest</h3>
 
   <p align="center">
-    A bite sized platforming game with a greedy knight
+    A bite-sized platforming game with a greedy knight
     <br />
     <a href="https://github.com/mgnfy-view/the-knights-quest/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·

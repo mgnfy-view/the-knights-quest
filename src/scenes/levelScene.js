@@ -1,6 +1,6 @@
 import { k } from "../utils/kaboomContext";
 import { end } from "./end";
-import { addScoreSection, makeMap, scaleUp } from "../utils/utilityFunctions";
+import { addGameObjects, addScoreSection, makeMap } from "../utils/utilityFunctions";
 import { levels } from "../utils/levelInfo";
 import {
     SCALE,
@@ -38,93 +38,19 @@ async function levelScene(globalState) {
     // Add the map to the level
     k.add(level);
 
-    // Add the player to the level
-    const player = k.add([
-        k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.idleRight }),
-        k.pos(scaleUp(playerSpawn[0][0]), scaleUp(playerSpawn[0][1])),
-        k.area({
-            // I used magic numbers here, I know it's a bad practice
-            // But since it's used nowhere else, I think we can get away with that
-            shape: new k.Rect(k.vec2(3, 1), 12, 15),
-        }),
-        k.body(),
-        k.scale(SCALE),
-        TAGS.player, // Add the "player" tag
-    ]);
+    // Add the game objects to the level
+    const { player } = addGameObjects({
+        playerSpawn,
+        tileSpawns,
+        coinSpawns,
+        exitSpawn,
+        scaffoldSpawns,
+        waterTopSpawns,
+        waterBottomSpawns,
+    });
 
-    // Add the tiles to the level
-    for (const tileSpawn of tileSpawns) {
-        k.add([
-            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.tile }),
-            k.pos(scaleUp(tileSpawn[0]), scaleUp(tileSpawn[1])),
-            k.area(),
-            k.body(),
-            k.scale(SCALE),
-            TAGS.tile, // Add the "tile" tag
-        ]);
-    }
-
-    // Now, add the coins to the level
+    // Keep a track of the coins the knight grabbed in this level
     let coinsCollectedThisLevel = 0;
-    for (const coinSpawn of coinSpawns) {
-        k.add([
-            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.coin }),
-            k.pos(scaleUp(coinSpawn[0]), scaleUp(coinSpawn[1])),
-            k.area({
-                // Magic numbers once again, haha
-                // We'll use magic numbers with k.Rect() only
-                shape: new k.Rect(k.vec2(3, 3), 9, 12),
-            }),
-            k.scale(SCALE),
-            TAGS.coin, // Add the "coin" tag
-        ]);
-    }
-
-    // Add the exit to the level
-    k.add([
-        k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.exit }),
-        k.pos(scaleUp(exitSpawn[0][0]), scaleUp(exitSpawn[0][1])),
-        k.area(),
-        k.body({ isStatic: true }),
-        k.scale(SCALE),
-        TAGS.exit, // Add the "exit" tag
-    ]);
-
-    // Add the scaffolds to the level
-    for (const scaffoldSpawn of scaffoldSpawns) {
-        k.add([
-            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.scaffold }),
-            k.pos(scaleUp(scaffoldSpawn[0]), scaleUp(scaffoldSpawn[1])),
-            k.area(),
-            k.body({ isStatic: true }),
-            k.scale(SCALE),
-            TAGS.scaffold, // Add the "scaffold" tag
-        ]);
-    }
-
-    // Add the water tops to the level
-    for (const waterTopSpawn of waterTopSpawns) {
-        k.add([
-            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.waterTop }),
-            k.pos(scaleUp(waterTopSpawn[0]), scaleUp(waterTopSpawn[1])),
-            k.area(),
-            k.scale(SCALE),
-            k.opacity(0.7),
-            TAGS.waterTop, // Add the "water-top" tag
-        ]);
-    }
-
-    // Add the water bottoms to the level
-    for (const waterBottomSpawn of waterBottomSpawns) {
-        k.add([
-            k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.waterBottom }),
-            k.pos(scaleUp(waterBottomSpawn[0]), scaleUp(waterBottomSpawn[1])),
-            k.area(),
-            k.scale(SCALE),
-            k.opacity(0.7),
-            TAGS.waterBottom, // Add the "water-bottom" tag
-        ]);
-    }
 
     // Display the number of fire balls left, and the coins collected so far
     const { fireBallCount, coinCount } = addScoreSection(globalState);
@@ -230,8 +156,6 @@ async function levelScene(globalState) {
         }
     });
 
-    // Collision detection
-
     // Grab a coin
     player.onCollide(OBJECTS.coin, (coin) => {
         k.play(SOUNDS.coinCollect, {
@@ -269,7 +193,6 @@ async function levelScene(globalState) {
 
     // Jump continuously while in the water elevator
     // This gives a nice wobbly effect while going up
-
     player.onCollide(TAGS.waterTop, () => {
         player.jump(JUMP_FORCE);
     });

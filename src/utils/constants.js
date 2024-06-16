@@ -20,6 +20,9 @@ const PLAYER_SPEED = 200;
 // The time for which the level info screen is displayed before entering the level
 const LEVEL_ENTRY_DELAY = 1500; // in milliseconds
 
+// Opacity of the water
+const WATER_OPACITY = 0.7;
+
 // Tags for animations
 const ANIMATIONS = {
     idleRight: "idleRight",
@@ -46,7 +49,7 @@ const UI_SIZE = {
     textScale: 0.6,
 };
 
-// Tags for keyboard keys
+// Tags for keyboard keys used in this game
 const KEYS = {
     left: "left",
     right: "right",
@@ -120,6 +123,7 @@ export {
     JUMP_FORCE,
     PLAYER_SPEED,
     LEVEL_ENTRY_DELAY,
+    WATER_OPACITY,
     ANIMATIONS,
     FONTS,
     UI_SIZE,
