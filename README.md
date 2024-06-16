@@ -63,7 +63,7 @@
 
 <img src="./public/images/screenshot.png" width="540" />
 
-The knight's quest is a platforming game built with javascript and kaboom.js, a javscript based game engine. With bite-sized but well thought levels, simple controls, and a decent set of mechanics, it is a great choice for small gaming session.
+The knight's quest is a platforming game built with javascript and kaboom.js, a javscript based game engine. With bite-sized but well thought levels, simple controls, and a decent set of mechanics, it is a great choice for a small gaming session.
 
 More levels will be added over time!
 
