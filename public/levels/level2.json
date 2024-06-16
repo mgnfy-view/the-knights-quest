@@ -5,317 +5,30 @@
     "layers": [
         {
             "draworder": "topdown",
-            "id": 7,
+            "id": 4,
             "name": "platform",
             "objects": [
                 {
                     "height": 16,
-                    "id": 29,
+                    "id": 1,
                     "name": "platform",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
-                    "y": 96
-                },
-                {
-                    "height": 16,
-                    "id": 30,
-                    "name": "platform",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 32,
+                    "x": 48,
                     "y": 128
                 },
                 {
                     "height": 32,
-                    "id": 31,
+                    "id": 2,
                     "name": "platform",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
-                    "width": 96,
-                    "x": 80,
-                    "y": 208
-                },
-                {
-                    "height": 16,
-                    "id": 32,
-                    "name": "platform",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 192,
-                    "y": 144
-                }
-            ],
-            "opacity": 1,
-            "type": "objectgroup",
-            "visible": true,
-            "x": 0,
-            "y": 0
-        },
-        {
-            "draworder": "topdown",
-            "id": 6,
-            "name": "game-objects",
-            "objects": [
-                {
-                    "height": 16,
-                    "id": 33,
-                    "name": "scaffold",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 80,
-                    "y": 80
-                },
-                {
-                    "height": 16,
-                    "id": 34,
-                    "name": "scaffold",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 80,
-                    "y": 96
-                },
-                {
-                    "height": 16,
-                    "id": 35,
-                    "name": "scaffold",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
+                    "width": 112,
                     "x": 96,
-                    "y": 96
-                },
-                {
-                    "height": 16,
-                    "id": 36,
-                    "name": "scaffold",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 112,
-                    "y": 96
-                },
-                {
-                    "height": 16,
-                    "id": 38,
-                    "name": "scaffold",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 128,
-                    "y": 96
-                },
-                {
-                    "height": 16,
-                    "id": 39,
-                    "name": "scaffold",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 96
-                },
-                {
-                    "height": 16,
-                    "id": 40,
-                    "name": "scaffold",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 160,
-                    "y": 96
-                },
-                {
-                    "height": 16,
-                    "id": 41,
-                    "name": "scaffold",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 160,
-                    "y": 80
-                },
-                {
-                    "height": 16,
-                    "id": 42,
-                    "name": "tile",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 96,
-                    "y": 80
-                },
-                {
-                    "height": 16,
-                    "id": 43,
-                    "name": "tile",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 112,
-                    "y": 80
-                },
-                {
-                    "height": 16,
-                    "id": 44,
-                    "name": "tile",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 128,
-                    "y": 80
-                },
-                {
-                    "height": 16,
-                    "id": 45,
-                    "name": "tile",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 80
-                },
-                {
-                    "height": 16,
-                    "id": 46,
-                    "name": "tile",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 112,
-                    "y": 64
-                },
-                {
-                    "height": 16,
-                    "id": 47,
-                    "name": "tile",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 128,
-                    "y": 64
-                },
-                {
-                    "height": 16,
-                    "id": 48,
-                    "name": "tile",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 128,
-                    "y": 48
-                },
-                {
-                    "height": 16,
-                    "id": 49,
-                    "name": "tile",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 48
-                },
-                {
-                    "height": 16,
-                    "id": 50,
-                    "name": "tile",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 32
-                },
-                {
-                    "height": 16,
-                    "id": 51,
-                    "name": "tile",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 64
-                },
-                {
-                    "height": 16,
-                    "id": 52,
-                    "name": "exit",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 192,
                     "y": 128
-                },
-                {
-                    "height": 16,
-                    "id": 53,
-                    "name": "coin",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 128
-                },
-                {
-                    "height": 16,
-                    "id": 54,
-                    "name": "coin",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 128,
-                    "y": 144
-                },
-                {
-                    "height": 16,
-                    "id": 55,
-                    "name": "coin",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 112,
-                    "y": 160
-                },
-                {
-                    "height": 16,
-                    "id": 56,
-                    "name": "coin",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 96,
-                    "y": 176
                 }
             ],
             "opacity": 1,
@@ -327,19 +40,75 @@
         {
             "draworder": "topdown",
             "id": 5,
+            "name": "game-objects",
+            "objects": [
+                {
+                    "height": 16,
+                    "id": 3,
+                    "name": "tile",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 144,
+                    "y": 96
+                },
+                {
+                    "height": 16,
+                    "id": 4,
+                    "name": "tile",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 144,
+                    "y": 112
+                },
+                {
+                    "height": 16,
+                    "id": 5,
+                    "name": "coin",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 160,
+                    "y": 96
+                },
+                {
+                    "height": 16,
+                    "id": 6,
+                    "name": "exit",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 192,
+                    "y": 112
+                }
+            ],
+            "opacity": 1,
+            "type": "objectgroup",
+            "visible": true,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "draworder": "topdown",
+            "id": 6,
             "name": "spawns",
             "objects": [
                 {
                     "height": 0,
-                    "id": 28,
+                    "id": 7,
                     "name": "player-spawn",
                     "point": true,
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 0,
-                    "x": 16,
-                    "y": 80
+                    "x": 48,
+                    "y": 112
                 }
             ],
             "opacity": 1,
@@ -349,8 +118,8 @@
             "y": 0
         }
     ],
-    "nextlayerid": 8,
-    "nextobjectid": 57,
+    "nextlayerid": 7,
+    "nextobjectid": 8,
     "orientation": "orthogonal",
     "renderorder": "right-down",
     "tiledversion": "1.10.2",
@@ -367,8 +136,7 @@
             "spacing": 0,
             "tilecount": 64,
             "tileheight": 16,
-            "tilewidth": 16,
-            "transparentcolor": "#ff00ff"
+            "tilewidth": 16
         }
     ],
     "tilewidth": 16,
