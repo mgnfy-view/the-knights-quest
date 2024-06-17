@@ -10,6 +10,7 @@ const levels = [
     { name: "level5", coin: 4, fireBalls: 5 },
     { name: "level6", coin: 1, fireBalls: 0 },
     { name: "level7", coin: 6, fireBalls: 0 },
+    { name: "level8", coin: 5, fireBalls: 2 },
 ];
 
 export { levels };

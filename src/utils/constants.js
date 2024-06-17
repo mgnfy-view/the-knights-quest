@@ -1,26 +1,20 @@
-// Scaling factor
 const SCALE = 3;
 
 // Canvas dimensions
 const CANVAS_WIDTH = 256;
 const CANVAS_HEIGHT = 256;
 
-// Canvas background color
 const CANVAS_COLOR = [99, 155, 255];
 
-// Gravity constant
 const GRAVITY = 2100;
 
-// Jump force for the player
 const JUMP_FORCE = 480;
 
-// Player's speed
 const PLAYER_SPEED = 200;
 
 // The time for which the level info screen is displayed before entering the level
 const LEVEL_ENTRY_DELAY = 1500; // in milliseconds
 
-// Opacity of the water
 const WATER_OPACITY = 0.7;
 
 // Tags for animations

@@ -1,7 +1,7 @@
 import { k } from "./utils/kaboomContext";
 import { loadAssets } from "./loader";
 import { GRAVITY, MENU } from "./utils/constants";
-import { menu } from "./scenes/menuScene";
+import { menu } from "./scenes/menu";
 
 // Load the game assets
 loadAssets();

@@ -97,7 +97,7 @@ Install the project's dependencies
 pnpm install
 ```
 
-Start the server to run the game locally with
+Start the server to run the game locally
 
 ```shell
 pnpm run dev
@@ -109,7 +109,7 @@ Thats' it, you should be ready to go now.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-You can use the arrow keys to move left and right. Press the spacebar to jump and x to shoot fire balls. Fire balls can destroy tiles (red block) as well as scaffolds (purple blocks). Water elevators allow you to climb greater heights. Collect as many coins as possible on your quest.
+You can use the arrow keys to move left and right. Press the spacebar to jump and x to shoot fire balls. Fire balls can destroy tiles (red blocks) as well as scaffolds (purple blocks). Water elevators allow you to climb greater heights. Collect as many coins as possible on your quest!
 
 Here are some in-game screenshots
 
@@ -127,9 +127,12 @@ Here are some in-game screenshots
 - [x] Design levels
 - [x] Develop the game with javascript and kaboom.js
   - [x] Add scenes
+    - [x] Add game objects
+    - [x] Register controls
+    - [x] Register events
   - [x] Add global state
   - [x] Add a menu and ending screen
-  - [ ] Code review and cleanup
+  - [x] Code review and cleanup
 - [x] Write a good README.md
 
 See the [open issues](https://github.com/mgnfy-view/the-knights-quest/issues) for a full list of proposed features (and known issues).

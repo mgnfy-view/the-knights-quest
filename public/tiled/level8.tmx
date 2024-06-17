@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="63">
+ <editorsettings>
+  <export target="../levels/level8.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="spriteSheet" tilewidth="16" tileheight="16" tilecount="64" columns="8">
+  <image source="../spriteSheets/spriteSheet.png" width="128" height="128"/>
+ </tileset>
+ <layer id="1" name="sky" width="16" height="16" visible="0">
+  <data encoding="csv">
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,
+50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50
+</data>
+ </layer>
+ <layer id="2" name="environment" width="16" height="16">
+  <data encoding="csv">
+0,0,59,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,59,0,0,0,0,0,0,0,0,0,59,0,0,18,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,0,
+0,0,0,0,0,0,0,0,0,18,0,0,0,0,0,0,
+0,0,0,0,25,26,26,26,26,26,27,0,0,0,0,0,
+0,0,0,0,41,42,42,42,42,42,43,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,18,0,0,18,0,0,0,0,
+0,0,0,0,0,0,0,25,26,26,26,27,0,0,0,0,
+0,0,0,0,0,0,0,41,42,42,42,43,0,0,59,0,
+0,59,0,0,0,0,0,0,0,0,0,0,0,59,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,18,0,0,
+0,0,0,0,19,0,0,0,0,0,0,0,0,19,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="objects" width="16" height="16" visible="0">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,57,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,49,49,0,0,0,0,20,0,0,
+0,0,0,57,0,51,0,49,49,0,0,0,0,28,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,28,0,57,
+0,0,0,0,0,0,0,0,0,0,0,0,0,28,0,0,
+0,0,0,20,0,0,0,0,0,0,0,0,0,28,0,0,
+0,0,0,28,0,0,49,0,0,57,0,0,0,17,0,0,
+0,0,0,28,0,0,49,0,0,0,0,0,17,0,0,0,
+0,0,0,28,0,0,49,0,0,0,0,0,0,0,0,0,
+0,0,0,28,0,0,17,0,0,0,0,0,0,0,0,0,
+0,0,0,28,0,0,0,28,0,0,28,0,0,0,0,0,
+0,0,0,28,0,0,0,28,57,0,28,0,0,0,0,0,
+0,0,0,28,0,0,0,28,0,0,28,0,0,0,0,0,
+0,0,0,28,0,0,0,28,0,0,28,0,0,0,0,0,
+0,0,0,28,0,0,0,28,0,0,28,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="4" name="game-objects">
+  <object id="5" name="tile" x="112" y="32" width="16" height="16"/>
+  <object id="6" name="tile" x="128" y="32" width="16" height="16"/>
+  <object id="7" name="tile" x="112" y="48" width="16" height="16"/>
+  <object id="8" name="tile" x="128" y="48" width="16" height="16"/>
+  <object id="9" name="tile" x="96" y="112" width="16" height="16"/>
+  <object id="10" name="tile" x="96" y="128" width="16" height="16"/>
+  <object id="11" name="tile" x="96" y="144" width="16" height="16"/>
+  <object id="12" name="exit" x="80" y="48" width="16" height="16"/>
+  <object id="14" name="scaffold" x="192" y="128" width="16" height="16"/>
+  <object id="15" name="scaffold" x="208" y="112" width="16" height="16"/>
+  <object id="17" name="coin" x="240" y="64" width="16" height="16"/>
+  <object id="18" name="coin" x="128" y="192" width="16" height="16"/>
+  <object id="19" name="coin" x="128" y="16" width="16" height="16"/>
+  <object id="20" name="coin" x="144" y="112" width="16" height="16"/>
+  <object id="22" name="water-top" x="48" y="96" width="16" height="16"/>
+  <object id="23" name="water-bottom" x="48" y="112" width="16" height="16"/>
+  <object id="24" name="water-bottom" x="48" y="128" width="16" height="16"/>
+  <object id="25" name="water-bottom" x="48" y="144" width="16" height="16"/>
+  <object id="27" name="water-bottom" x="48" y="160" width="16" height="16"/>
+  <object id="28" name="water-bottom" x="48" y="176" width="16" height="16"/>
+  <object id="29" name="water-bottom" x="48" y="192" width="16" height="16"/>
+  <object id="30" name="water-bottom" x="48" y="208" width="16" height="16"/>
+  <object id="31" name="water-bottom" x="48" y="224" width="16" height="16"/>
+  <object id="32" name="water-bottom" x="48" y="240" width="16" height="16"/>
+  <object id="33" name="water-bottom" x="112" y="176" width="16" height="16"/>
+  <object id="34" name="water-bottom" x="112" y="192" width="16" height="16"/>
+  <object id="36" name="water-bottom" x="112" y="208" width="16" height="16"/>
+  <object id="37" name="water-bottom" x="112" y="224" width="16" height="16"/>
+  <object id="38" name="water-bottom" x="112" y="240" width="16" height="16"/>
+  <object id="39" name="water-bottom" x="160" y="176" width="16" height="16"/>
+  <object id="40" name="water-bottom" x="160" y="192" width="16" height="16"/>
+  <object id="41" name="water-bottom" x="160" y="208" width="16" height="16"/>
+  <object id="42" name="water-bottom" x="160" y="224" width="16" height="16"/>
+  <object id="43" name="water-bottom" x="160" y="240" width="16" height="16"/>
+  <object id="47" name="water-top" x="208" y="32" width="16" height="16"/>
+  <object id="48" name="water-bottom" x="208" y="48" width="16" height="16"/>
+  <object id="49" name="water-bottom" x="208" y="64" width="16" height="16"/>
+  <object id="50" name="water-bottom" x="208" y="80" width="16" height="16"/>
+  <object id="51" name="water-bottom" x="208" y="96" width="16" height="16"/>
+  <object id="62" name="scaffold" x="96" y="160" width="16" height="16"/>
+ </objectgroup>
+ <objectgroup id="5" name="platform" visible="0">
+  <object id="52" name="platform" x="64" y="64" width="112" height="32"/>
+  <object id="53" name="platform" x="224" y="32" width="16" height="16"/>
+  <object id="54" name="platform" x="112" y="144" width="80" height="32"/>
+  <object id="55" name="platform" x="208" y="224" width="16" height="16"/>
+  <object id="61" name="platform" x="64" y="224" width="16" height="16"/>
+ </objectgroup>
+ <objectgroup id="6" name="spawns" visible="0">
+  <object id="56" name="player-spawn" x="208" y="208">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

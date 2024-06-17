@@ -10,7 +10,7 @@ import {
     WATER_OPACITY,
 } from "./constants";
 
-// Creates the map for a level and returns the map along with the spawn points for various
+// Creates the map for a level and returns it along with the spawn points for various
 // game objects
 async function makeMap(levelName) {
     // Fetch the json data from the public folder
@@ -45,7 +45,8 @@ async function makeMap(levelName) {
             }
         }
 
-        // The second layer consists of game objects such as the tiles, coins, and the exit
+        // The second layer consists of game objects such as the tiles, scaffolds, coins, the exit
+        // and the water elevator
         if (layer.name === LAYERS.gameObjects) {
             for (const gameObject of layer.objects) {
                 switch (gameObject.name) {
@@ -98,7 +99,8 @@ function scaleUp(number) {
 
 // Adds the score section (which displays the fire ball and coin count) to the level
 function addScoreSection(globalState) {
-    // We'll use magic values for the scoreboard, since this is a one time thing. So pardon me!
+    // We'll use magic values for positioning the scoreboard, since this is a one time
+    // thing. So pardon me!
 
     k.add([
         k.sprite(TAGS.spriteSheet, { anim: ANIMATIONS.fireBall }),
@@ -130,7 +132,7 @@ function addScoreSection(globalState) {
 }
 
 // Adds all the game objects (player, exit, coins, tiles, scaffolds, water elevators) to
-// the leve;
+// the level
 function addGameObjects({
     playerSpawn,
     tileSpawns,
@@ -146,7 +148,7 @@ function addGameObjects({
         k.pos(scaleUp(playerSpawn[0][0]), scaleUp(playerSpawn[0][1])),
         k.area({
             // I used magic numbers here, I know it's a bad practice
-            // But since it's used nowhere else, I think we can get away with that
+            // But since it's used nowhere else, I think I can get away with it
             shape: new k.Rect(k.vec2(3, 1), 12, 15),
         }),
         k.body(),
@@ -162,6 +164,9 @@ function addGameObjects({
             k.area(),
             k.body(),
             k.scale(SCALE),
+            k.offscreen({
+                destroy: true,
+            }),
             TAGS.tile, // Add the "tile" tag
         ]);
     }

@@ -6,239 +6,172 @@
         {
             "draworder": "topdown",
             "id": 4,
-            "name": "platform",
-            "objects": [
-                {
-                    "height": 32,
-                    "id": 2,
-                    "name": "platform",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 176,
-                    "x": 16,
-                    "y": 0
-                },
-                {
-                    "height": 16,
-                    "id": 3,
-                    "name": "platform",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 224,
-                    "y": 64
-                }
-            ],
-            "opacity": 1,
-            "type": "objectgroup",
-            "visible": false,
-            "x": 0,
-            "y": 0
-        },
-        {
-            "draworder": "topdown",
-            "id": 5,
             "name": "game-objects",
             "objects": [
                 {
                     "height": 16,
-                    "id": 4,
-                    "name": "water-bottom",
+                    "id": 5,
+                    "name": "tile",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
+                    "x": 112,
                     "y": 32
                 },
                 {
                     "height": 16,
-                    "id": 5,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 16,
-                    "y": 48
-                },
-                {
-                    "height": 16,
                     "id": 6,
-                    "name": "water-bottom",
+                    "name": "tile",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
-                    "y": 64
+                    "x": 128,
+                    "y": 32
                 },
                 {
                     "height": 16,
                     "id": 7,
-                    "name": "water-bottom",
+                    "name": "tile",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
-                    "y": 80
+                    "x": 112,
+                    "y": 48
                 },
                 {
                     "height": 16,
                     "id": 8,
-                    "name": "water-bottom",
+                    "name": "tile",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
-                    "y": 96
+                    "x": 128,
+                    "y": 48
                 },
                 {
                     "height": 16,
                     "id": 9,
-                    "name": "water-bottom",
+                    "name": "tile",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
+                    "x": 96,
                     "y": 112
                 },
                 {
                     "height": 16,
                     "id": 10,
-                    "name": "water-bottom",
+                    "name": "tile",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
+                    "x": 96,
                     "y": 128
                 },
                 {
                     "height": 16,
                     "id": 11,
-                    "name": "water-bottom",
+                    "name": "tile",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
+                    "x": 96,
                     "y": 144
                 },
                 {
                     "height": 16,
                     "id": 12,
-                    "name": "water-bottom",
+                    "name": "exit",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
-                    "y": 160
-                },
-                {
-                    "height": 16,
-                    "id": 13,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 16,
-                    "y": 176
+                    "x": 80,
+                    "y": 48
                 },
                 {
                     "height": 16,
                     "id": 14,
-                    "name": "water-bottom",
+                    "name": "scaffold",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
-                    "y": 192
+                    "x": 192,
+                    "y": 128
                 },
                 {
                     "height": 16,
                     "id": 15,
-                    "name": "water-bottom",
+                    "name": "scaffold",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
-                    "y": 208
-                },
-                {
-                    "height": 16,
-                    "id": 16,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 16,
-                    "y": 224
+                    "x": 208,
+                    "y": 112
                 },
                 {
                     "height": 16,
                     "id": 17,
-                    "name": "water-bottom",
+                    "name": "coin",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 16,
-                    "y": 240
+                    "x": 240,
+                    "y": 64
                 },
                 {
                     "height": 16,
                     "id": 18,
-                    "name": "water-bottom",
+                    "name": "coin",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 240
+                    "x": 128,
+                    "y": 192
                 },
                 {
                     "height": 16,
                     "id": 19,
-                    "name": "water-bottom",
+                    "name": "coin",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 224
+                    "x": 128,
+                    "y": 16
                 },
                 {
                     "height": 16,
-                    "id": 21,
-                    "name": "water-bottom",
+                    "id": 20,
+                    "name": "coin",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 208
+                    "x": 144,
+                    "y": 112
                 },
                 {
                     "height": 16,
                     "id": 22,
-                    "name": "water-bottom",
+                    "name": "water-top",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 192
+                    "x": 48,
+                    "y": 96
                 },
                 {
                     "height": 16,
@@ -248,8 +181,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 176
+                    "x": 48,
+                    "y": 112
                 },
                 {
                     "height": 16,
@@ -259,8 +192,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 160
+                    "x": 48,
+                    "y": 128
                 },
                 {
                     "height": 16,
@@ -270,19 +203,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
+                    "x": 48,
                     "y": 144
-                },
-                {
-                    "height": 16,
-                    "id": 26,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 64,
-                    "y": 128
                 },
                 {
                     "height": 16,
@@ -292,8 +214,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 112
+                    "x": 48,
+                    "y": 160
                 },
                 {
                     "height": 16,
@@ -303,8 +225,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 96
+                    "x": 48,
+                    "y": 176
                 },
                 {
                     "height": 16,
@@ -314,8 +236,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 80
+                    "x": 48,
+                    "y": 192
                 },
                 {
                     "height": 16,
@@ -325,8 +247,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 64
+                    "x": 48,
+                    "y": 208
                 },
                 {
                     "height": 16,
@@ -336,8 +258,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 48
+                    "x": 48,
+                    "y": 224
                 },
                 {
                     "height": 16,
@@ -347,8 +269,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 64,
-                    "y": 32
+                    "x": 48,
+                    "y": 240
                 },
                 {
                     "height": 16,
@@ -358,8 +280,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 176,
-                    "y": 32
+                    "x": 112,
+                    "y": 176
                 },
                 {
                     "height": 16,
@@ -369,19 +291,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 176,
-                    "y": 48
-                },
-                {
-                    "height": 16,
-                    "id": 35,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 176,
-                    "y": 64
+                    "x": 112,
+                    "y": 192
                 },
                 {
                     "height": 16,
@@ -391,8 +302,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 176,
-                    "y": 80
+                    "x": 112,
+                    "y": 208
                 },
                 {
                     "height": 16,
@@ -402,8 +313,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 176,
-                    "y": 96
+                    "x": 112,
+                    "y": 224
                 },
                 {
                     "height": 16,
@@ -413,8 +324,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 176,
-                    "y": 112
+                    "x": 112,
+                    "y": 240
                 },
                 {
                     "height": 16,
@@ -424,8 +335,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 176,
-                    "y": 128
+                    "x": 160,
+                    "y": 176
                 },
                 {
                     "height": 16,
@@ -435,8 +346,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 176,
-                    "y": 144
+                    "x": 160,
+                    "y": 192
                 },
                 {
                     "height": 16,
@@ -446,8 +357,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 176,
-                    "y": 160
+                    "x": 160,
+                    "y": 208
                 },
                 {
                     "height": 16,
@@ -457,8 +368,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 176,
-                    "y": 176
+                    "x": 160,
+                    "y": 224
                 },
                 {
                     "height": 16,
@@ -468,52 +379,19 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 176,
-                    "y": 192
-                },
-                {
-                    "height": 16,
-                    "id": 44,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 176,
-                    "y": 208
-                },
-                {
-                    "height": 16,
-                    "id": 45,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 176,
-                    "y": 224
-                },
-                {
-                    "height": 16,
-                    "id": 46,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 176,
+                    "x": 160,
                     "y": 240
                 },
                 {
                     "height": 16,
                     "id": 47,
-                    "name": "water-bottom",
+                    "name": "water-top",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 224,
-                    "y": 80
+                    "x": 208,
+                    "y": 32
                 },
                 {
                     "height": 16,
@@ -523,8 +401,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 224,
-                    "y": 96
+                    "x": 208,
+                    "y": 48
                 },
                 {
                     "height": 16,
@@ -534,8 +412,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 224,
-                    "y": 112
+                    "x": 208,
+                    "y": 64
                 },
                 {
                     "height": 16,
@@ -545,8 +423,8 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 224,
-                    "y": 128
+                    "x": 208,
+                    "y": 80
                 },
                 {
                     "height": 16,
@@ -556,217 +434,19 @@
                     "type": "",
                     "visible": true,
                     "width": 16,
-                    "x": 224,
-                    "y": 144
-                },
-                {
-                    "height": 16,
-                    "id": 52,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 224,
-                    "y": 160
-                },
-                {
-                    "height": 16,
-                    "id": 53,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 224,
-                    "y": 176
-                },
-                {
-                    "height": 16,
-                    "id": 54,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 224,
-                    "y": 192
-                },
-                {
-                    "height": 16,
-                    "id": 55,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 224,
-                    "y": 208
-                },
-                {
-                    "height": 16,
-                    "id": 56,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 224,
-                    "y": 224
-                },
-                {
-                    "height": 16,
-                    "id": 57,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 224,
-                    "y": 240
-                },
-                {
-                    "height": 16,
-                    "id": 58,
-                    "name": "exit",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 224,
-                    "y": 48
-                },
-                {
-                    "height": 16,
-                    "id": 59,
-                    "name": "coin",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 112
-                },
-                {
-                    "height": 16,
-                    "id": 60,
-                    "name": "coin",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
                     "x": 208,
-                    "y": 176
+                    "y": 96
                 },
                 {
                     "height": 16,
-                    "id": 61,
-                    "name": "coin",
+                    "id": 62,
+                    "name": "scaffold",
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 16,
                     "x": 96,
-                    "y": 64
-                },
-                {
-                    "height": 16,
-                    "id": 62,
-                    "name": "coin",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 48,
-                    "y": 112
-                },
-                {
-                    "height": 16,
-                    "id": 63,
-                    "name": "coin",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 32,
                     "y": 160
-                },
-                {
-                    "height": 16,
-                    "id": 64,
-                    "name": "coin",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 48,
-                    "y": 208
-                },
-                {
-                    "height": 16,
-                    "id": 65,
-                    "name": "water-top",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 160
-                },
-                {
-                    "height": 16,
-                    "id": 66,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 176
-                },
-                {
-                    "height": 16,
-                    "id": 67,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 192
-                },
-                {
-                    "height": 16,
-                    "id": 68,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 208
-                },
-                {
-                    "height": 16,
-                    "id": 69,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 224
-                },
-                {
-                    "height": 16,
-                    "id": 70,
-                    "name": "water-bottom",
-                    "rotation": 0,
-                    "type": "",
-                    "visible": true,
-                    "width": 16,
-                    "x": 144,
-                    "y": 240
                 }
             ],
             "opacity": 1,
@@ -777,20 +457,87 @@
         },
         {
             "draworder": "topdown",
+            "id": 5,
+            "name": "platform",
+            "objects": [
+                {
+                    "height": 32,
+                    "id": 52,
+                    "name": "platform",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 112,
+                    "x": 64,
+                    "y": 64
+                },
+                {
+                    "height": 16,
+                    "id": 53,
+                    "name": "platform",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 224,
+                    "y": 32
+                },
+                {
+                    "height": 32,
+                    "id": 54,
+                    "name": "platform",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 80,
+                    "x": 112,
+                    "y": 144
+                },
+                {
+                    "height": 16,
+                    "id": 55,
+                    "name": "platform",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 208,
+                    "y": 224
+                },
+                {
+                    "height": 16,
+                    "id": 61,
+                    "name": "platform",
+                    "rotation": 0,
+                    "type": "",
+                    "visible": true,
+                    "width": 16,
+                    "x": 64,
+                    "y": 224
+                }
+            ],
+            "opacity": 1,
+            "type": "objectgroup",
+            "visible": false,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "draworder": "topdown",
             "id": 6,
             "name": "spawns",
             "objects": [
                 {
                     "height": 0,
-                    "id": 1,
+                    "id": 56,
                     "name": "player-spawn",
                     "point": true,
                     "rotation": 0,
                     "type": "",
                     "visible": true,
                     "width": 0,
-                    "x": 16,
-                    "y": 240
+                    "x": 208,
+                    "y": 208
                 }
             ],
             "opacity": 1,
@@ -801,7 +548,7 @@
         }
     ],
     "nextlayerid": 7,
-    "nextobjectid": 71,
+    "nextobjectid": 63,
     "orientation": "orthogonal",
     "renderorder": "right-down",
     "tiledversion": "1.10.2",

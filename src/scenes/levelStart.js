@@ -1,5 +1,5 @@
 import { k } from "../utils/kaboomContext";
-import { levelScene } from "./levelScene";
+import { level } from "./level";
 import { levels } from "../utils/levelInfo";
 import { FONTS, LEVEL_ENTRY_DELAY } from "../utils/constants";
 
@@ -15,7 +15,7 @@ function levelStart(globalState) {
 
     // Go to the level after briefly displaying the level number
     setTimeout(() => {
-        k.scene(levels[globalState.level].name, levelScene);
+        k.scene(levels[globalState.level].name, level);
         k.go(levels[globalState.level].name, globalState);
     }, LEVEL_ENTRY_DELAY);
 }

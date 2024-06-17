@@ -19,7 +19,7 @@ import {
 // The level scene is used to create new levels
 // The global state should contain a level number (starting from 0), the number of bullets
 // available in this level, and the number of coins collected so far
-async function levelScene(globalState) {
+async function level(globalState) {
     // Load the map for the level
     k.loadSprite(levels[globalState.level].name, `./maps/${levels[globalState.level].name}.png`);
 
@@ -241,4 +241,4 @@ async function levelScene(globalState) {
     });
 }
 
-export { levelScene };
+export { level };
