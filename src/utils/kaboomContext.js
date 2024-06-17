@@ -1,10 +1,10 @@
-import kaboom from "kaboom";
+import kaplay from "kaplay";
 import { CANVAS_COLOR, CANVAS_HEIGHT, CANVAS_WIDTH, SCALE } from "./constants";
 
 // Get the html5 canvas reference
 const gameCanvas = document.getElementById("game-canvas");
 
-const k = kaboom({
+const k = kaplay({
     width: CANVAS_WIDTH * SCALE,
     height: CANVAS_HEIGHT * SCALE,
     canvas: gameCanvas,

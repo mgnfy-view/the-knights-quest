@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  kaboom:
+  kaplay:
     specifier: ^3000.1.17
     version: 3000.1.17
 
@@ -817,8 +817,8 @@ packages:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
     dev: true
 
-  /kaboom@3000.1.17:
-    resolution: {integrity: sha512-npAtjGxj9Oj9vLpXfURck9eUPHR2ac1Lhc1bNcZ0NWcs+Lgs40Ty+wjujv1C2DwjWvxaX+3r2G64M35BS/Ry2g==}
+  /kaplay@3000.1.17:
+    resolution: {integrity: sha512-h2dwFuxGS7jrTTQafRLzxbBbG/M6yvV3kT4DvmbefWzwYr//68cNKl1Rz4l61bTDjEZTXcOzNwtsS2mwEJl5FQ==}
     dev: false
 
   /keyv@4.5.4:

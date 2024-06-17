@@ -123,8 +123,8 @@ Here are some in-game screenshots
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Make a sprite sheet
-- [x] Design levels
+- [x] Make a sprite sheet using Aesprite
+- [x] Design levels with the Tiled map editor
 - [x] Develop the game with javascript and kaboom.js
   - [x] Add scenes
     - [x] Add game objects
