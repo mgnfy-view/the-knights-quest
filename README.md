@@ -102,7 +102,7 @@ Thats' it, you should be ready to go now.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-You can use the arrow keys to move left and right. Press the spacebar to jump and x to shoot fire balls. Fire balls can destroy tiles (red blocks) as well as scaffolds (purple blocks). Water elevators allow you to climb greater heights. Collect as many coins as possible on your quest!
+You can use the arrow keys to move left and right. Press the spacebar to jump and x to shoot fire balls. Fire balls can destroy tiles (red blocks) as well as scaffolds (purple blocks). Water elevators allow you to climb greater heights. Collect all the coins to make the knight happy!
 
 Here are some in-game screenshots
 
