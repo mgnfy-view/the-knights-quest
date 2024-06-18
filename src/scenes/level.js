@@ -156,6 +156,15 @@ async function level(globalState) {
         }
     });
 
+    k.onUpdate(() => {
+        if (k.isKeyDown(KEYS.shift) && k.isKeyDown(KEYS.r)) {
+            globalState.fireBalls = levels[globalState.level].fireBalls;
+            globalState.coinsCollected -= coinsCollectedThisLevel;
+
+            k.go(levels[globalState.level].name, globalState);
+        }
+    });
+
     // Grab a coin
     player.onCollide(OBJECTS.coin, (coin) => {
         k.play(SOUNDS.coinCollect, {

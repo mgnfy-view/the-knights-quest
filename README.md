@@ -1,11 +1,4 @@
 <!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -63,7 +56,7 @@
 
 <img src="./public/images/screenshot.png" width="540" />
 
-The knight's quest is a platforming game built with javascript and kaboom.js, a javscript based game engine. With bite-sized but well thought levels, simple controls, and a decent set of mechanics, it is a great choice for a small gaming session.
+The knight's quest is a platforming game built with javascript and kaplay (successor of kaboom.js), a javscript based game engine. With bite-sized but well thought levels, simple controls, and a decent set of mechanics, it is a great choice for a small gaming session.
 
 More levels will be added over time!
 
@@ -71,7 +64,7 @@ More levels will be added over time!
 ### Built With
 
 - ![JavaScript][javascript-url]
-- ![Kaboom.js](https://img.shields.io/badge/-KABOOMJS-CB3837.svg?style=for-the-badge)
+- ![Kaplay](https://img.shields.io/badge/-KAPLAY-6BC96C.svg?style=for-the-badge)
 - ![PNPM][pnpm-url]
 
 
@@ -80,7 +73,7 @@ More levels will be added over time!
 
 ### Prerequisites
 
-Make sure you have git and pnpm installed and configured on your system.
+Make sure you have git, nodejs, and pnpm installed and configured on your system.
 
 ### Installation
 
@@ -170,7 +163,6 @@ Here's a gateway to all my socials, don't forget to hit me up!
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/mgnfy-view/the-knights-quest.svg?style=for-the-badge
 [contributors-url]: https://github.com/mgnfy-view/the-knights-quest/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/mgnfy-view/the-knights-quest.svg?style=for-the-badge

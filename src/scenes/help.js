@@ -17,6 +17,7 @@ function help() {
         "1. Press the left and right arrow keys\n   to move around",
         "2. Press 'space' to jump",
         "3. Press 'x' to shoot a fireBall",
+        "4. Press shift+r to restart a level",
     ];
     k.add([
         k.text(helpText[0], {
@@ -42,6 +43,15 @@ function help() {
             align: "left",
         }),
         k.pos(80, 320),
+        k.anchor("left"),
+        k.scale(UI_SIZE.textScale),
+    ]);
+    k.add([
+        k.text(helpText[3], {
+            font: FONTS.kitchenSink,
+            align: "left",
+        }),
+        k.pos(80, 370),
         k.anchor("left"),
         k.scale(UI_SIZE.textScale),
     ]);

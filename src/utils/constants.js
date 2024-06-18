@@ -52,6 +52,8 @@ const KEYS = {
     enter: "enter",
     h: "h",
     esc: "escape",
+    shift: "shift",
+    r: "r",
 };
 
 // Tags for sound effects
