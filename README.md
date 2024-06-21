@@ -18,8 +18,10 @@
   <p align="center">
     A bite-sized platforming game with a greedy knight
     <br />
+    <a href="https://mgnfy-view.itch.io/the-knights-quest">Play</a>
+    -
     <a href="https://github.com/mgnfy-view/the-knights-quest/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
+    -
     <a href="https://github.com/mgnfy-view/the-knights-quest/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
@@ -56,7 +58,9 @@
 
 <img src="./public/images/screenshot.png" width="540" />
 
-The knight's quest is a platforming game built with javascript and kaplay (successor of kaboom.js), a javscript based game engine. With bite-sized but well thought levels, simple controls, and a decent set of mechanics, it is a great choice for a small gaming session.
+The knight's quest is a single-player, platforming game built with javascript and kaplay, a javscript based game engine. With bite-sized but well thought levels, simple controls, and a decent set of mechanics, it is a great choice for a small gaming session.
+
+It has also been published on [itch.io](https://mgnfy-view.itch.io/the-knights-quest).
 
 More levels will be added over time!
 
@@ -118,7 +122,7 @@ Here are some in-game screenshots
 
 - [x] Make a sprite sheet using Aesprite
 - [x] Design levels with the Tiled map editor
-- [x] Develop the game with javascript and kaboom.js
+- [x] Develop the game with javascript and kaplay
   - [x] Add scenes
     - [x] Add game objects
     - [x] Register controls
